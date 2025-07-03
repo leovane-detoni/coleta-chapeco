@@ -1,175 +1,95 @@
-<!DOCTYPE html>  
- <html lang="pt-br">  
- <head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Conscientização da Coleta de Lixo em Chapecó</title>  
-  <style>  
-  /* Estilos CSS básicos para melhorar a apresentação */  
-  body {  
-  font-family: Arial, sans-serif;  
-  margin: 0;  
-  padding: 0;  
-  background-color: #f4f4f4;  
-  color: #333;  
-  }  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coleta de Lixo Eletrônico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Cabeçalho -->
+  <header class="bg-green-600 text-white py-6">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold">Coleta de Lixo Eletrônico</h1>
+      <p class="mt-2">Descarte seus eletrônicos de forma responsável e sustentável!</p>
+    </div>
+  </header>
 
-  .container {  
-  width: 80%;  
-  margin: auto;  
-  overflow: hidden;  
-  padding: 20px;  
-  background-color: #fff;  
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
-  }  
+  <!-- Seção Principal -->
+  <section class="container mx-auto px-4 py-12">
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Informações -->
+      <div class="md:w-1/2">
+        <h2 class="text-2xl font-semibold mb-4">Sobre o Serviço</h2>
+        <p class="mb-4">Nosso serviço de coleta de lixo eletrônico ajuda a dar um destino correto a dispositivos como celulares, computadores, baterias e outros eletrônicos. Contribuímos para a preservação do meio ambiente e a reciclagem responsável.</p>
+        <ul class="list-disc pl-6 mb-6">
+          <li>Coleta gratuita em pontos específicos</li>
+          <li>Reciclagem de materiais eletrônicos</li>
+          <li>Parcerias com empresas certificadas</li>
+          <li>Agendamento fácil e rápido</li>
+        </ul>
+        <a href="#contato" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">Agendar Coleta</a>
+      </div>
+      <!-- Imagem -->
+      <div class="md:w-1/2">
+        <img src="https://via.placeholder.com/600x400?text=Lixo+Eletrônico" alt="Lixo Eletrônico" class="w-full rounded-lg shadow-lg">
+      </div>
+    </div>
+  </section>
 
-  header {  
-  background: #509359;  
-  color: white;  
-  padding-top: 30px;  
-  min-height: 70px;  
-  border-bottom: 3px solid #3D6A44;  
-  }  
+  <!-- Formulário de Contato -->
+  <section id="contato" class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-semibold mb-6 text-center">Entre em Contato</h2>
+      <div class="max-w-lg mx-auto">
+        <div class="space-y-4">
+          <div>
+            <label for="nome" class="block text-sm font-medium">Nome</label>
+            <input type="text" id="nome" class="w-full border rounded-lg px-4 py-2" placeholder="Seu nome" required>
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium">E-mail</label>
+            <input type="email" id="email" class="w-full border rounded-lg px-4 py-2" placeholder="Seu e-mail" required>
+          </div>
+          <div>
+            <label for="endereco" class="block text-sm font-medium">Endereço</label>
+            <input type="text" id="endereco" class="w-full border rounded-lg px-4 py-2" placeholder="Endereço para coleta" required>
+          </div>
+          <div>
+            <label for="mensagem" class="block text-sm font-medium">Mensagem</label>
+            <textarea id="mensagem" class="w-full border rounded-lg px-4 py-2" rows="4" placeholder="Descreva os itens para coleta"></textarea>
+          </div>
+          <button type="button" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 w-full">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  header a {  
-  color: #fff;  
-  text-decoration: none;  
-  text-transform: uppercase;  
-  font-size: 16px;  
-  }  
+  <!-- Perguntas Frequentes -->
+  <section class="container mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Perguntas Frequentes</h2>
+    <div class="space-y-4">
+      <div>
+        <h3 class="text-lg font-medium">Quais itens podem ser coletados?</h3>
+        <p class="text-gray-600">Aceitamos celulares, computadores, tablets, baterias, cabos, carregadores e outros eletrônicos. Entre em contato para confirmar.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-medium">A coleta tem custo?</h3>
+        <p class="text-gray-600">A coleta é gratuita em nossos pontos de coleta. Para coletas residenciais, pode haver uma taxa dependendo da localização.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-medium">Como agendar uma coleta?</h3>
+        <p class="text-gray-600">Preencha o formulário acima ou entre em contato pelo telefone (XX) XXXX-XXXX.</p>
+      </div>
+    </div>
+  </section>
 
-  header ul {  
-  padding: 0;  
-  margin: 0;  
-  }  
-
-  header li {  
-  float: left;  
-  display: inline;  
-  padding: 0 20px 0 20px;  
-  }  
-
-  header #branding {  
-  float: left;  
-  }  
-
-  header #branding h1 {  
-  margin: 0;  
-  }  
-
-  header nav {  
-  float: right;  
-  margin-top: 10px;  
-  }  
-
-  header .highlight, header .current a {  
-  color: #3D6A44;  
-  font-weight: bold;  
-  }  
-
-  header a:hover {  
-  color: #ccc;  
-  font-weight: bold;  
-  }  
-
-  /* Estilos para as seções */  
-  section {  
-  margin-bottom: 20px;  
-  }  
-
-  h1, h2, h3 {  
-  color: #509359;  
-  }  
-
-  /* Estilos específicos para a tabela */  
-  table {  
-  width: 100%;  
-  border-collapse: collapse;  
-  margin-bottom: 20px;  
-  }  
-
-  th, td {  
-  border: 1px solid #ddd;  
-  padding: 8px;  
-  text-align: left;  
-  }  
-
-  th {  
-  background-color: #f2f2f2;  
-  }  
-
-  /* Estilos para o footer */  
-  footer {  
-  background: #509359;  
-  color: white;  
-  text-align: center;  
-  padding: 10px;  
-  margin-top: 20px;  
-  }  
-  </style>  
- </head>  
- <body>  
-  <header>  
-  <div class="container">  
-  <div id="branding">  
-  <h1><span class="highlight">Coleta de Lixo</span> em Chapecó</h1>  
-  </div>  
-  <nav>  
-  <ul>  
-  <li class="current"><a href="#">Início</a></li>  
-  <li><a href="#pontos-coleta">Pontos de Coleta</a></li>  
-  <li><a href="#dicas">Dicas</a></li>  
-  </ul>  
-  </nav>  
-  </div>  
-  </header>  
-
-  <div class="container">  
-
-  <section id="introducao">  
-  <h2>Introdução</h2>  
-  <p>A coleta e separação correta do lixo são fundamentais para a preservação do meio ambiente e a promoção da saúde pública. Em Chapecó, a Prefeitura realiza um trabalho constante na coleta seletiva, porém a conscientização é necessária para melhorar os índices de reciclagem.</p>  
-  </section>  
-
-  <section id="situacao">  
-  <h2>Situação da Separação do Lixo em Chapecó</h2>  
-  <p>Atualmente, a Prefeitura de Chapecó recolhe cerca de 400 cargas por semana de resíduos na coleta seletiva. Contudo, uma separação inadequada tem como consequência o descarte de aproximadamente 600 toneladas de resíduos nos aterros sanitários. A melhoria na separação dos materiais recicláveis é crucial para aumentar a eficácia do processo de reciclagem e minimizar os impactos ambientais.</p>  
-  <p>A separação incorreta do lixo prejudica a reciclagem, entupindo os processos e diminuindo a quantidade de materiais reaproveitáveis. Portanto, é vital que cada cidadão se envolva.</p>  
-  </section>  
-
-  <section id="pontos-coleta">  
-  <h2>Pontos de Coleta de Lixo</h2>  
-  <p>Chapecó dispõe de vários pontos de coleta para facilitar o descarte correto dos resíduos:</p>  
-  <ul>  
-  <li><strong>Coleta Seletiva Porta a Porta:</strong> A coleta dos materiais recicláveis é feita diretamente nas residências em dias específicos (consultar o calendário da coleta na página da Prefeitura).</li>  
-  <li><strong>Ecopontos:</strong> A cidade possui três Ecopontos localizados em áreas estratégicas, onde os cidadãos podem descartar materiais volumosos e eletrônicos que não devem ser colocados no lixo comum. Os locais são:  
-  <ul>  
-  <li>Prefeitura de Chapecó</li>  
-  <li>Secretaria de Infraestrutura Urbana</li>  
-  <li>Parque da Efapi</li>  
-  </ul>  
-  </li>  
-  </ul>  
-  </section>  
-
-  <section id="dicas">  
-  <h2>Dicas para uma Melhor Separação</h2>  
-  <h3>Materiais Recicláveis:</h3>  
-  <ul>  
-  <li>Papel e papelão limpos</li>  
-  <li>Vidros (sem rolhas ou tampas)</li>  
-  <li>Plásticos (limpos e secos)</li>  
-  </ul>  
-  <h3>Resíduos Orgânicos:</h3>  
-  <p>Descartar em lixeiras específicas (caso disponível) ou em Ecopontos.</p>  
-  <h3>Materiais Perigosos:</h3>  
-  <p>Como pilhas e eletrônicos, devem ser levados a Ecopontos.</p>  
-  </section>  
-
-  </div>  
-
-  <footer>  
-  <p>Página de Conscientização da Coleta de Lixo em Chapecó</p>  
-  </footer>  
- </body>  
- </html>  
+  <!-- Rodapé -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2025 Coleta de Lixo Eletrônico. Todos os direitos reservados.</p>
+      <p class="mt-2">Contato: contato@coletalixo.com | (XX) XXXX-XXXX</p>
+    </div>
+  </footer>
+</body>
+</html>
