@@ -59,7 +59,8 @@
             <label for="mensagem" class="block text-sm font-medium">Mensagem</label>
             <textarea id="mensagem" class="w-full border rounded-lg px-4 py-2" rows="4" placeholder="Descreva os itens para coleta"></textarea>
           </div>
-          <button type="button" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 w-full">Enviar</button>
+          <button type="button" onclick="sendMessage()" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 w-full">Enviar</button>
+          <div id="successMessage" class="hidden text-green-600 text-center mt-4"></div>
         </div>
       </div>
     </div>
@@ -79,7 +80,7 @@
       </div>
       <div>
         <h3 class="text-lg font-medium">Como agendar uma coleta?</h3>
-        <p class="text-gray-600">Preencha o formulário acima ou entre em contato pelo telefone (49) 3321-8400.</p>
+        <p class="text-gray-600">Preencha o formulário acima ou entre em contato pelo telefone (XX) XXXX-XXXX.</p>
       </div>
     </div>
   </section>
@@ -88,8 +89,30 @@
   <footer class="bg-gray-800 text-white py-6">
     <div class="container mx-auto px-4 text-center">
       <p>© 2025 Coleta de Lixo Eletrônico. Todos os direitos reservados.</p>
-      <p class="mt-2">Contato: atendimento@chapeco.sc.gov.br | (49) 33218400</p>
+      <p class="mt-2">Contato: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="45262a2b3124312a05262a29203124292c3d2a6b262a28">[email protected]</a> | (XX) XXXX-XXXX</p>
     </div>
   </footer>
+
+  <!-- JavaScript para o envio -->
+  <script>
+    function sendMessage() {
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const endereco = document.getElementById('endereco').value;
+      const mensagem = document.getElementById('mensagem').value;
+
+      if (nome && email && endereco && mensagem) {
+        document.getElementById('successMessage').textContent = 'Mensagem enviada com sucesso';
+        document.getElementById('successMessage').classList.remove('hidden');
+        // Reset form (optional)
+        document.getElementById('nome').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('endereco').value = '';
+        document.getElementById('mensagem').value = '';
+      } else {
+        alert('Por favor, preencha todos os campos.');
+      }
+    }
+  </script>
 </body>
 </html>
