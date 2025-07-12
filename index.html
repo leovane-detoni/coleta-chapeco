@@ -5,13 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coleta de Lixo Eletrônico</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-900 text-gray-200 font-sans">
   <!-- Cabeçalho -->
-  <header class="bg-green-600 text-white py-6">
-    <div class="container mx-auto px-4">
-      <h1 class="text-3xl font-bold">Coleta de Lixo Eletrônico</h1>
-      <p class="mt-2">Descarte seus eletrônicos de forma responsável e sustentável!</p>
+  <header class="bg-green-900 text-white py-6 shadow-lg">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl font-bold fade-in">Coleta de Lixo Eletrônico</h1>
+      <p class="mt-2 fade-in">Descarte seus eletrônicos de forma responsável e sustentável!</p>
     </div>
   </header>
 
@@ -20,47 +29,47 @@
     <div class="flex flex-col md:flex-row gap-8">
       <!-- Informações -->
       <div class="md:w-1/2">
-        <h2 class="text-2xl font-semibold mb-4">Sobre o Serviço</h2>
-        <p class="mb-4">Nosso serviço de coleta de lixo eletrônico ajuda a dar um destino correto a dispositivos como celulares, computadores, baterias e outros eletrônicos. Contribuímos para a preservação do meio ambiente e a reciclagem responsável.</p>
-        <ul class="list-disc pl-6 mb-6">
+        <h2 class="text-2xl font-semibold mb-4 text-green-300 fade-in">Sobre o Serviço</h2>
+        <p class="mb-4 text-gray-300 fade-in">Nosso serviço de coleta de lixo eletrônico ajuda a dar um destino correto a dispositivos como celulares, computadores, baterias e outros eletrônicos. Contribuímos para a preservação do meio ambiente e a reciclagem responsável.</p>
+        <ul class="list-disc pl-6 mb-6 text-gray-300 fade-in">
           <li>Coleta gratuita em pontos específicos</li>
           <li>Reciclagem de materiais eletrônicos</li>
           <li>Parcerias com empresas certificadas</li>
           <li>Agendamento fácil e rápido</li>
         </ul>
-        <a href="#contato" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">Agendar Coleta</a>
+        <a href="#contato" class="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 fade-in">Agendar Coleta</a>
       </div>
       <!-- Imagem -->
       <div class="md:w-1/2">
-        <img src="https://i.ibb.co/NgG7H6Wg/simbolos-reciclagem.jpg" alt="Lixo Eletrônico" class="w-full rounded-lg shadow-lg">
+        <img src="https://i.ibb.co/NgG7H6Wg/simbolos-reciclagem.jpg" alt="Lixo Eletrônico" class="w-full rounded-lg shadow-lg fade-in">
       </div>
     </div>
   </section>
 
   <!-- Formulário de Contato -->
-  <section id="contato" class="bg-white py-12">
+  <section id="contato" class="bg-gray-800 py-12 shadow-inner">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-semibold mb-6 text-center">Entre em Contato</h2>
+      <h2 class="text-2xl font-semibold mb-6 text-center text-green-300 fade-in">Entre em Contato</h2>
       <div class="max-w-lg mx-auto">
         <div class="space-y-4">
           <div>
-            <label for="nome" class="block text-sm font-medium">Nome</label>
-            <input type="text" id="nome" class="w-full border rounded-lg px-4 py-2" placeholder="Seu nome" required>
+            <label for="nome" class="block text-sm font-medium text-gray-300">Nome</label>
+            <input type="text" id="nome" class="w-full border-gray-700 bg-gray-700 text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" placeholder="Seu nome" required>
           </div>
           <div>
-            <label for="email" class="block text-sm font-medium">E-mail</label>
-            <input type="email" id="email" class="w-full border rounded-lg px-4 py-2" placeholder="Seu e-mail" required>
+            <label for="email" class="block text-sm font-medium text-gray-300">E-mail</label>
+            <input type="email" id="email" class="w-full border-gray-700 bg-gray-700 text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" placeholder="Seu e-mail" required>
           </div>
           <div>
-            <label for="endereco" class="block text-sm font-medium">Endereço</label>
-            <input type="text" id="endereco" class="w-full border rounded-lg px-4 py-2" placeholder="Endereço para coleta" required>
+            <label for="endereco" class="block text-sm font-medium text-gray-300">Endereço</label>
+            <input type="text" id="endereco" class="w-full border-gray-700 bg-gray-700 text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" placeholder="Endereço para coleta" required>
           </div>
           <div>
-            <label for="mensagem" class="block text-sm font-medium">Mensagem</label>
-            <textarea id="mensagem" class="w-full border rounded-lg px-4 py-2" rows="4" placeholder="Descreva os itens para coleta"></textarea>
+            <label for="mensagem" class="block text-sm font-medium text-gray-300">Mensagem</label>
+            <textarea id="mensagem" class="w-full border-gray-700 bg-gray-700 text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" rows="4" placeholder="Descreva os itens para coleta"></textarea>
           </div>
-          <button type="button" onclick="sendMessage()" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 w-full">Enviar</button>
-          <div id="successMessage" class="hidden text-green-600 text-center mt-4"></div>
+          <button type="button" onclick="sendMessage()" class="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 w-full fade-in">Enviar</button>
+          <div id="successMessage" class="hidden text-green-400 text-center mt-4 fade-in"></div>
         </div>
       </div>
     </div>
@@ -68,28 +77,28 @@
 
   <!-- Perguntas Frequentes -->
   <section class="container mx-auto px-4 py-12">
-    <h2 class="text-2xl font-semibold mb-6 text-center">Perguntas Frequentes</h2>
+    <h2 class="text-2xl font-semibold mb-6 text-center text-green-300 fade-in">Perguntas Frequentes</h2>
     <div class="space-y-4">
       <div>
-        <h3 class="text-lg font-medium">Quais itens podem ser coletados?</h3>
-        <p class="text-gray-600">Aceitamos celulares, computadores, tablets, baterias, cabos, carregadores e outros eletrônicos. Entre em contato para confirmar.</p>
+        <h3 class="text-lg font-medium text-green-300 fade-in">Quais itens podem ser coletados?</h3>
+        <p class="text-gray-400 fade-in">Aceitamos celulares, computadores, tablets, baterias, cabos, carregadores e outros eletrônicos. Entre em contato para confirmar.</p>
       </div>
       <div>
-        <h3 class="text-lg font-medium">A coleta tem custo?</h3>
-        <p class="text-gray-600">A coleta é gratuita em nossos pontos de coleta. Para coletas residenciais, pode haver uma taxa dependendo da localização.</p>
+        <h3 class="text-lg font-medium text-green-300 fade-in">A coleta tem custo?</h3>
+        <p class="text-gray-400 fade-in">A coleta é gratuita em nossos pontos de coleta. Para coletas residenciais, pode haver uma taxa dependendo da localização.</p>
       </div>
       <div>
-        <h3 class="text-lg font-medium">Como agendar uma coleta?</h3>
-        <p class="text-gray-600">Preencha o formulário acima ou entre em contato pelo telefone (49) 3321-8400.</p>
+        <h3 class="text-lg font-medium text-green-300 fade-in">Como agendar uma coleta?</h3>
+        <p class="text-gray-400 fade-in">Preencha o formulário acima ou entre em contato pelo telefone (49) 3321-8400.</p>
       </div>
     </div>
   </section>
 
   <!-- Rodapé -->
-  <footer class="bg-gray-800 text-white py-6">
+  <footer class="bg-gray-900 text-gray-400 py-6 border-t border-gray-700">
     <div class="container mx-auto px-4 text-center">
       <p>© 2025 Coleta de Lixo Eletrônico. Todos os direitos reservados.</p>
-      <p class="mt-2">Contato: <a href="mailto:atendimento@chapeco.sc.gov.br">atendimento@chapeco.sc.gov.br</a> | (49) 3321-8400</p>
+      <p class="mt-2">Contato: <a href="mailto:atendimento@chapeco.sc.gov.br" class="text-green-400 hover:text-green-300">atendimento@chapeco.sc.gov.br</a> | (49) 3321-8400</p>
     </div>
   </footer>
 
