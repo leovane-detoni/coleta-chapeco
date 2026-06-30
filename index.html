@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coleta de Lixo Eletrônico & Sustentabilidade</title>
+  <title>Coleta de Lixo Eletrônico & Sustentabilidade Chapecó</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .fade-in {
@@ -17,17 +17,18 @@
 </head>
 <body class="bg-gray-900 text-gray-200 font-sans">
   
-  <header class="bg-green-900 text-white py-6 shadow-lg">
+  <header class="bg-green-900 text-white py-6 shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-4 text-center">
       <h1 class="text-3xl font-bold fade-in">Coleta de Lixo Eletrônico</h1>
       <p class="mt-2 fade-in">Descarte seus eletrônicos de forma responsável e sustentável!</p>
-      <nav class="mt-4 flex justify-center gap-4 text-sm font-medium">
+      <nav class="mt-4 flex flex-wrap justify-center gap-4 text-sm font-medium">
         <a href="#sobre" class="hover:text-green-300 transition">Sobre</a>
+        <a href="#calculadora" class="hover:text-green-300 transition text-yellow-400 font-bold">📊 Calculadora Ecológica</a>
+        <a href="#pontos" class="hover:text-green-300 transition">Pontos & Filtros</a>
         <a href="#guia" class="hover:text-green-300 transition">Guia Prático</a>
         <a href="#sugerir" class="hover:text-green-300 transition">Sugerir Ponto</a>
         <a href="#contato" class="hover:text-green-300 transition">Agendar</a>
         <a href="#cooperativas" class="hover:text-green-300 transition">Cooperativas</a>
-        <a href="#faq" class="hover:text-green-300 transition">FAQ</a>
       </nav>
     </div>
   </header>
@@ -47,6 +48,69 @@
       </div>
       <div class="md:w-1/2">
         <img src="https://i.ibb.co/CKpGhLfK/freepik-upload-31871.jpg" alt="Lixo Eletrônico" class="w-full rounded-lg shadow-lg fade-in">
+      </div>
+    </div>
+  </section>
+
+  <section id="calculadora" class="bg-gray-800 py-12 shadow-inner border-t border-b border-gray-700">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl font-semibold mb-2 text-center text-yellow-400">📊 Calculadora de Impacto Ambiental</h2>
+      <p class="text-center text-gray-400 mb-6 text-sm">Simule o impacto positivo do seu descarte antes de levar ao ecoponto!</p>
+      
+      <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-300">Celulares / Tablets (Qtd)</label>
+            <input type="number" id="calc-celulares" min="0" value="0" class="w-full bg-gray-800 text-white rounded p-2 mt-1 focus:ring-2 focus:ring-green-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-300">Notebooks / PCs (Qtd)</label>
+            <input type="number" id="calc-pcs" min="0" value="0" class="w-full bg-gray-800 text-white rounded p-2 mt-1 focus:ring-2 focus:ring-green-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-300">Pilhas / Baterias (Qtd)</label>
+            <input type="number" id="calc-pilhas" min="0" value="0" class="w-full bg-gray-800 text-white rounded p-2 mt-1 focus:ring-2 focus:ring-green-500 outline-none">
+          </div>
+        </div>
+        
+        <button type="button" onclick="calcularImpacto()" class="w-full bg-yellow-600 text-gray-900 font-bold py-3 rounded hover:bg-yellow-500 transition">Calcular Pegada Ecológica</button>
+        
+        <div id="resultado-calculadora" class="hidden mt-6 p-4 bg-gray-900 rounded-lg border border-yellow-500/30 text-center">
+          <h3 class="text-lg font-bold text-green-400 mb-2">🎉 Excelente Contribuição!</h3>
+          <p class="text-sm text-gray-300">Ao descartar esses itens corretamente, você evita o descarte inadequado de aproximadamente <span id="res-peso" class="font-bold text-white text-lg">0</span> kg de resíduos e poupa o equivalente a <span id="res-co2" class="font-bold text-white text-lg">0</span> kg de emissões de CO₂ na atmosfera.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pontos" class="container mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-2 text-center text-green-300">Ecopontos Ativos em Chapecó</h2>
+    <p class="text-center text-gray-400 mb-6 text-sm">Filtre as localizações de acordo com o resíduo que você possui em mãos.</p>
+    
+    <div class="flex flex-wrap justify-center gap-2 mb-8">
+      <button onclick="filtrarPontos('todos')" class="bg-green-800 text-white px-4 py-2 text-sm rounded-full hover:bg-green-700 transition font-medium">✨ Mostrar Todos</button>
+      <button onclick="filtrarPontos('eletronicos')" class="bg-gray-800 text-gray-300 hover:text-white px-4 py-2 text-sm rounded-full hover:bg-gray-700 transition border border-gray-700">📱 Celulares e Computadores</button>
+      <button onclick="filtrarPontos('pilhas')" class="bg-gray-800 text-gray-300 hover:text-white px-4 py-2 text-sm rounded-full hover:bg-gray-700 transition border border-gray-700">🔋 Apenas Pilhas/Baterias</button>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="ponto-item eletronicos bg-gray-800 p-6 rounded-lg border border-gray-700">
+        <span class="text-xs font-bold text-green-400 uppercase tracking-wider">Ecoponto Completo</span>
+        <h3 class="text-lg font-bold text-white mt-1 mb-2">Centro de Descarte Efapi</h3>
+        <p class="text-sm text-gray-400">Av. Attilio Fontana, Próximo ao Terminal - Efapi</p>
+        <p class="text-xs text-gray-500 mt-3 font-semibold">Aceita: Computadores, TVs, Celulares e Cabos.</p>
+      </div>
+      <div class="ponto-item pilhas bg-gray-800 p-6 rounded-lg border border-gray-700">
+        <span class="text-xs font-bold text-yellow-400 uppercase tracking-wider">Coleta Rápida</span>
+        <h3 class="text-lg font-bold text-white mt-1 mb-2">Supermercado Agro-Centro</h3>
+        <p class="text-sm text-gray-400">Rua Nereu Ramos, Centro</p>
+        <p class="text-xs text-gray-500 mt-3 font-semibold">Aceita: Pilhas domésticas e baterias portáteis.</p>
+      </div>
+      <div class="ponto-item eletronicos bg-gray-800 p-6 rounded-lg border border-gray-700">
+        <span class="text-xs font-bold text-green-400 uppercase tracking-wider">Ecoponto Completo</span>
+        <h3 class="text-lg font-bold text-white mt-1 mb-2">Ecoponto Central Chapecó</h3>
+        <p class="text-sm text-gray-400">Rua Marechal Deodoro da Fonseca, Centro</p>
+        <p class="text-xs text-gray-500 mt-3 font-semibold">Aceita: Qualquer eletrodoméstico ou eletroeletrônico.</p>
       </div>
     </div>
   </section>
@@ -107,7 +171,7 @@
             <label><input type="checkbox" class="mr-2 accent-green-600"> Lâmpadas</label>
           </div>
         </div>
-        <button type="button" onclick="suggestPoint()" class="bg-green-700 text-white px-6 py-2.png rounded-lg hover:bg-green-600 transition duration-300 w-full mt-2 font-medium">Sugerir Ponto para Validação</button>
+        <button type="button" onclick="suggestPoint()" class="bg-green-700 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition duration-300 w-full mt-2 font-medium">Sugerir Ponto para Validação</button>
         <div id="suggestMessage" class="hidden text-green-400 text-center mt-2 text-sm"></div>
       </div>
     </div>
@@ -158,6 +222,24 @@
         <span class="text-xs bg-green-900 text-green-300 px-3 py-1 rounded-full font-semibold">Chapecó - SC</span>
       </div>
     </div>
+
+    <div class="mt-12 bg-gradient-to-r from-green-900 to-gray-800 p-8 rounded-lg max-w-4xl mx-auto text-center shadow-lg border border-green-700/40">
+      <h3 class="text-xl font-bold text-white mb-4">📈 Nosso Impacto Consolidado (2026)</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div>
+          <p class="text-3xl font-extrabold text-green-400">+1.2 Ton</p>
+          <p class="text-xs text-gray-300 uppercase mt-1">De lixo eletrônico reciclado</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-green-400">450+</p>
+          <p class="text-xs text-gray-300 uppercase mt-1">Famílias auxiliadas indiretamente</p>
+        </div>
+        <div>
+          <p class="text-3xl font-extrabold text-green-400">85%</p>
+          <p class="text-xs text-gray-300 uppercase mt-1">De redução de descarte impróprio</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="faq" class="bg-gray-800 py-12 border-t border-gray-700">
@@ -188,7 +270,7 @@
   </footer>
 
   <script>
-    // Função existente de envio de mensagem de agendamento
+    // Função existente de agendamento
     function sendMessage() {
       const nome = document.getElementById('nome').value;
       const email = document.getElementById('email').value;
@@ -207,17 +289,13 @@
       }
     }
 
-    // NOVA FUNÇÃO: Alternar exibição do Guia Prático
+    // Alternar exibição do Guia Prático
     function toggleGuia(id) {
       const element = document.getElementById(id);
-      if (element.classList.contains('hidden')) {
-        element.classList.remove('hidden');
-      } else {
-        element.classList.add('hidden');
-      }
+      element.classList.toggle('hidden');
     }
 
-    // NOVA FUNÇÃO: Mensagem de sugestão de ponto
+    // Mensagem de sugestão de ponto
     function suggestPoint() {
       const nomePonto = document.getElementById('ponto-nome').value;
       const enderecoPonto = document.getElementById('ponto-endereco').value;
@@ -231,6 +309,33 @@
       } else {
         alert('Por favor, insira o nome e o endereço do ponto sugerido.');
       }
+    }
+
+    // NOVA FUNÇÃO: Filtrar pontos na tela (Lógica simples)
+    function filtrarPontos(categoria) {
+      const itens = document.querySelectorAll('.ponto-item');
+      itens.forEach(item => {
+        if (categoria === 'todos' || item.classList.contains(categoria)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    // NOVA FUNÇÃO: Calculadora Ecológica Math Logic
+    function calcularImpacto() {
+      const cels = parseInt(document.getElementById('calc-celulares').value) || 0;
+      const pcs = parseInt(document.getElementById('calc-pcs').value) || 0;
+      const pilhas = parseInt(document.getElementById('calc-pilhas').value) || 0;
+
+      // Pesos e médias aproximadas de CO2 poupados por dispositivo
+      const pesoTotal = (cels * 0.2) + (pcs * 3.5) + (pilhas * 0.05);
+      const co2Total = (cels * 1.5) + (pcs * 25) + (pilhas * 0.3);
+
+      document.getElementById('res-peso').textContent = pesoTotal.toFixed(2);
+      document.getElementById('res-co2').textContent = co2Total.toFixed(2);
+      document.getElementById('resultado-calculadora').classList.remove('hidden');
     }
   </script>
 </body>
