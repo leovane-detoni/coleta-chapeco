@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coleta de Lixo Eletrônico</title>
+  <title>Coleta de Lixo Eletrônico & Sustentabilidade</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .fade-in {
@@ -16,18 +16,24 @@
   </style>
 </head>
 <body class="bg-gray-900 text-gray-200 font-sans">
-  <!-- Cabeçalho -->
+  
   <header class="bg-green-900 text-white py-6 shadow-lg">
     <div class="container mx-auto px-4 text-center">
       <h1 class="text-3xl font-bold fade-in">Coleta de Lixo Eletrônico</h1>
       <p class="mt-2 fade-in">Descarte seus eletrônicos de forma responsável e sustentável!</p>
+      <nav class="mt-4 flex justify-center gap-4 text-sm font-medium">
+        <a href="#sobre" class="hover:text-green-300 transition">Sobre</a>
+        <a href="#guia" class="hover:text-green-300 transition">Guia Prático</a>
+        <a href="#sugerir" class="hover:text-green-300 transition">Sugerir Ponto</a>
+        <a href="#contato" class="hover:text-green-300 transition">Agendar</a>
+        <a href="#cooperativas" class="hover:text-green-300 transition">Cooperativas</a>
+        <a href="#faq" class="hover:text-green-300 transition">FAQ</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Seção Principal -->
-  <section class="container mx-auto px-4 py-12">
+  <section id="sobre" class="container mx-auto px-4 py-12">
     <div class="flex flex-col md:flex-row gap-8">
-      <!-- Informações -->
       <div class="md:w-1/2">
         <h2 class="text-2xl font-semibold mb-4 text-green-300 fade-in">Sobre o Serviço</h2>
         <p class="mb-4 text-gray-300 fade-in">Nosso serviço de coleta de lixo eletrônico ajuda a dar um destino correto a dispositivos como celulares, computadores, baterias e outros eletrônicos. Contribuímos para a preservação do meio ambiente e a reciclagem responsável.</p>
@@ -37,19 +43,79 @@
           <li>Parcerias com empresas certificadas</li>
           <li>Agendamento fácil e rápido</li>
         </ul>
-        <a href="#contato" class="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 fade-in">Agendar Coleta</a>
+        <a href="#contato" class="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 fade-in inline-block">Agendar Coleta</a>
       </div>
-      <!-- Imagem -->
       <div class="md:w-1/2">
         <img src="https://i.ibb.co/CKpGhLfK/freepik-upload-31871.jpg" alt="Lixo Eletrônico" class="w-full rounded-lg shadow-lg fade-in">
       </div>
     </div>
   </section>
 
-  <!-- Formulário de Contato -->
-  <section id="contato" class="bg-gray-800 py-12 shadow-inner">
+  <section id="guia" class="bg-gray-800 py-12 shadow-inner border-t border-b border-gray-700">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-semibold mb-6 text-center text-green-300 fade-in">Entre em Contato</h2>
+      <h2 class="text-2xl font-semibold mb-2 text-center text-green-300">Guia de Descarte Prático</h2>
+      <p class="text-center text-gray-400 mb-8">Clique em uma categoria para aprender como preparar o material para o descarte correto em Chapecó.</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div onclick="toggleGuia('info-celulares')" class="bg-gray-700 p-6 rounded-lg cursor-pointer hover:bg-gray-600 transition border-l-4 border-green-600">
+          <h3 class="text-lg font-bold text-white mb-2">📱 Celulares e Tablets</h3>
+          <p class="text-sm text-gray-300">Clique para ver instruções de segurança.</p>
+          <div id="info-celulares" class="hidden mt-4 text-xs text-gray-400 bg-gray-800 p-3 rounded">
+            <strong>Como preparar:</strong> Remova chips de operadora, cartões de memória e faça a restauração de fábrica para apagar seus dados pessoais por segurança.
+          </div>
+        </div>
+
+        <div onclick="toggleGuia('info-pilhas')" class="bg-gray-700 p-6 rounded-lg cursor-pointer hover:bg-gray-600 transition border-l-4 border-yellow-600">
+          <h3 class="text-lg font-bold text-white mb-2">🔋 Pilhas e Baterias</h3>
+          <p class="text-sm text-gray-300">Clique para ver instruções de armazenamento.</p>
+          <div id="info-pilhas" class="hidden mt-4 text-xs text-gray-400 bg-gray-800 p-3 rounded">
+            <strong>Como preparar:</strong> Guarde-as em recipientes de plástico bem fechados e secos. Nunca misture com lixo orgânico, pois liberam metais pesados perigosos.
+          </div>
+        </div>
+
+        <div onclick="toggleGuia('info-computadores')" class="bg-gray-700 p-6 rounded-lg cursor-pointer hover:bg-gray-600 transition border-l-4 border-blue-600">
+          <h3 class="text-lg font-bold text-white mb-2">💻 Computadores e Notebooks</h3>
+          <p class="text-sm text-gray-300">Clique para ver detalhes de triagem.</p>
+          <div id="info-computadores" class="hidden mt-4 text-xs text-gray-400 bg-gray-800 p-3 rounded">
+            <strong>Como preparar:</strong> Gabinetes, monitores CRT ou LCD e periféricos (mouses e teclados) podem ser entregues inteiros. Não desmonte as peças internas em casa.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sugerir" class="container mx-auto px-4 py-12">
+    <div class="max-w-lg mx-auto">
+      <h2 class="text-2xl font-semibold mb-2 text-center text-green-300">Conhece um ponto de coleta em Chapecó?</h2>
+      <p class="text-center text-gray-400 mb-6 text-sm">Ajude nossa plataforma a crescer sugerindo locais ou ecopontos comerciais que recebem materiais.</p>
+      
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg space-y-4">
+        <div>
+          <label for="ponto-nome" class="block text-sm font-medium text-gray-300">Nome do Estabelecimento / Local</label>
+          <input type="text" id="ponto-nome" class="w-full bg-gray-700 text-gray-200 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-green-600" placeholder="Ex: Supermercado Central, Escola X...">
+        </div>
+        <div>
+          <label for="ponto-endereco" class="block text-sm font-medium text-gray-300">Endereço Completo e Bairro</label>
+          <input type="text" id="ponto-endereco" class="w-full bg-gray-700 text-gray-200 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-green-600" placeholder="Rua, número e Bairro em Chapecó">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-300 mb-1">Que tipo de resíduo eles aceitam lá?</label>
+          <div class="grid grid-cols-2 gap-2 text-sm text-gray-300">
+            <label><input type="checkbox" class="mr-2 accent-green-600"> Apenas Pilhas</label>
+            <label><input type="checkbox" class="mr-2 accent-green-600"> Eletrodomésticos</label>
+            <label><input type="checkbox" class="mr-2 accent-green-600"> Celulares/Computadores</label>
+            <label><input type="checkbox" class="mr-2 accent-green-600"> Lâmpadas</label>
+          </div>
+        </div>
+        <button type="button" onclick="suggestPoint()" class="bg-green-700 text-white px-6 py-2.png rounded-lg hover:bg-green-600 transition duration-300 w-full mt-2 font-medium">Sugerir Ponto para Validação</button>
+        <div id="suggestMessage" class="hidden text-green-400 text-center mt-2 text-sm"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="bg-gray-800 py-12 shadow-inner border-t border-gray-700">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-semibold mb-6 text-center text-green-300">Entre em Contato / Agendamento</h2>
       <div class="max-w-lg mx-auto">
         <div class="space-y-4">
           <div>
@@ -68,42 +134,61 @@
             <label for="mensagem" class="block text-sm font-medium text-gray-300">Mensagem</label>
             <textarea id="mensagem" class="w-full border-gray-700 bg-gray-700 text-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600" rows="4" placeholder="Descreva os itens para coleta"></textarea>
           </div>
-          <button type="button" onclick="sendMessage()" class="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 w-full fade-in">Enviar</button>
+          <button type="button" onclick="sendMessage()" class="bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300 w-full">Enviar</button>
           <div id="successMessage" class="hidden text-green-400 text-center mt-4 fade-in"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Perguntas Frequentes -->
-  <section class="container mx-auto px-4 py-12">
-    <h2 class="text-2xl font-semibold mb-6 text-center text-green-300 fade-in">Perguntas Frequentes</h2>
-    <div class="space-y-4">
-      <div>
-        <h3 class="text-lg font-medium text-green-300 fade-in">Quais itens podem ser coletados?</h3>
-        <p class="text-gray-400 fade-in">Aceitamos celulares, computadores, tablets, baterias, cabos, carregadores e outros eletrônicos. Entre em contato para confirmar.</p>
+  <section id="cooperativas" class="container mx-auto px-4 py-12">
+    <h2 class="text-2xl font-semibold mb-2 text-center text-green-300">Para onde vai o seu lixo?</h2>
+    <p class="text-center text-gray-400 mb-8">Trabalhamos em conjunto com associações e cooperativas de Chapecó que garantem a destinação correta e a renda de famílias locais.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+        <h3 class="text-xl font-bold text-white mb-2">Triadores da Grande Efapi</h3>
+        <p class="text-sm text-gray-300 mb-4">Especializados na triagem inicial de carcaças plásticas de computadores, separação de metais recicláveis e fios de cobre.</p>
+        <span class="text-xs bg-green-900 text-green-300 px-3 py-1 rounded-full font-semibold">Chapecó - SC</span>
       </div>
-      <div>
-        <h3 class="text-lg font-medium text-green-300 fade-in">A coleta tem custo?</h3>
-        <p class="text-gray-400 fade-in">A coleta é gratuita em nossos pontos de coleta. Para coletas residenciais, pode haver uma taxa dependendo da localização.</p>
-      </div>
-      <div>
-        <h3 class="text-lg font-medium text-green-300 fade-in">Como agendar uma coleta?</h3>
-        <p class="text-gray-400 fade-in">Preencha o formulário acima ou entre em contato pelo telefone (49) 3321-8400.</p>
+      
+      <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+        <h3 class="text-xl font-bold text-white mb-2">Associação de Catadores Solidários</h3>
+        <p class="text-sm text-gray-300 mb-4">Responsáveis pela coleta e armazenamento temporário de placas de circuito impresso e componentes eletrônicos complexos antes do envio industrial.</p>
+        <span class="text-xs bg-green-900 text-green-300 px-3 py-1 rounded-full font-semibold">Chapecó - SC</span>
       </div>
     </div>
   </section>
 
-  <!-- Rodapé -->
+  <section id="faq" class="bg-gray-800 py-12 border-t border-gray-700">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-semibold mb-6 text-center text-green-300">Perguntas Frequentes</h2>
+      <div class="space-y-4 max-w-3xl mx-auto">
+        <div>
+          <h3 class="text-lg font-medium text-green-300">Quais itens podem ser coletados?</h3>
+          <p class="text-gray-400">Aceitamos celulares, computadores, tablets, baterias, cabos, carregadores e outros eletrônicos. Entre em contato para confirmar.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-green-300">A coleta tem custo?</h3>
+          <p class="text-gray-400">A coleta é gratuita em nossos pontos de coleta. Para coletas residenciais, pode haver uma taxa dependendo da localização.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-medium text-green-300">Como agendar uma coleta?</h3>
+          <p class="text-gray-400">Preencha o formulário acima ou entre em contato pelo telefone (49) 3321-8400.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="bg-gray-900 text-gray-400 py-6 border-t border-gray-700">
     <div class="container mx-auto px-4 text-center">
-      <p>© 2025 Coleta de Lixo Eletrônico. Todos os direitos reservados.</p>
+      <p>© 2026 Coleta de Lixo Eletrônico Chapecó. Todos os direitos reservados.</p>
       <p class="mt-2">Contato: <a href="mailto:atendimento@chapeco.sc.gov.br" class="text-green-400 hover:text-green-300">atendimento@chapeco.sc.gov.br</a> | (49) 3321-8400</p>
     </div>
   </footer>
 
-  <!-- JavaScript para o envio -->
   <script>
+    // Função existente de envio de mensagem de agendamento
     function sendMessage() {
       const nome = document.getElementById('nome').value;
       const email = document.getElementById('email').value;
@@ -113,13 +198,38 @@
       if (nome && email && endereco && mensagem) {
         document.getElementById('successMessage').textContent = 'Obrigada! Assim que possível entraremos em contato';
         document.getElementById('successMessage').classList.remove('hidden');
-        // Reset form (optional)
         document.getElementById('nome').value = '';
         document.getElementById('email').value = '';
         document.getElementById('endereco').value = '';
         document.getElementById('mensagem').value = '';
       } else {
         alert('Por favor, preencha todos os campos.');
+      }
+    }
+
+    // NOVA FUNÇÃO: Alternar exibição do Guia Prático
+    function toggleGuia(id) {
+      const element = document.getElementById(id);
+      if (element.classList.contains('hidden')) {
+        element.classList.remove('hidden');
+      } else {
+        element.classList.add('hidden');
+      }
+    }
+
+    // NOVA FUNÇÃO: Mensagem de sugestão de ponto
+    function suggestPoint() {
+      const nomePonto = document.getElementById('ponto-nome').value;
+      const enderecoPonto = document.getElementById('ponto-endereco').value;
+
+      if (nomePonto && enderecoPonto) {
+        const msg = document.getElementById('suggestMessage');
+        msg.textContent = 'Sugestão enviada com sucesso! Nossa equipe analisará o local para inclusão no mapa.';
+        msg.classList.remove('hidden');
+        document.getElementById('ponto-nome').value = '';
+        document.getElementById('ponto-endereco').value = '';
+      } else {
+        alert('Por favor, insira o nome e o endereço do ponto sugerido.');
       }
     }
   </script>
